@@ -1,0 +1,40 @@
+/** About **/
+
+.about_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 30px 30px;
+    max-width: 550px;
+    box-shadow: 3px 2px 6px 1px rgba(0, 0, 0, 0);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    margin-top: 65px;
+
+    .about_text {
+        text-align: left;
+        font-family: monospace;
+        margin-bottom: 0px;
+        font-size: 16px;
+        color: white;
+        padding: 20px;
+    }
+
+    .santi_avatar {
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+        padding: 12px;
+    }
+
+}
+
+@media (min-height: 875px) {
+    .about-wrapper {
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,47 @@
+.info_icon {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    z-index: 999;
+
+    &:hover {
+        transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}
+
+.swal2-popup {
+    background-color: rgba(255, 255, 255, 0.315) !important;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(20px);
+    font-family: 'Poppins', monospace, sans-serif !important;
+    border-radius: 15px;
+    color: white;
+
+    h2 {
+        font-weight: 500 !important;
+        margin-top: 0px !important;
+        font-size: 17px !important;
+        text-align: center !important;
+        color: white !important;
+
+        span {
+            margin-top: 20px !important;
+            padding-top: 10px !important;
+            font-weight: 200 !important;
+        }
+
+    }
+
+    .swal2-html-container {
+        color: white;
+        font-family: 'Poppins', monospace, sans-serif !important;
+        font-size: 15px;
+    }
+
+    .swal2-confirm {
+        border-radius: 25px;
+    }
+
+}

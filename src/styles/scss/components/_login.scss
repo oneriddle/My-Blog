@@ -1,0 +1,168 @@
+.generic_container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background: #fff;
+
+    padding: 25px 40px 10px 40px;
+
+    form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        padding: 15px;
+        margin: 10px;
+
+
+
+
+        h2 {
+            margin-top: 0px !important;
+        }
+    }
+
+
+    input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 5px;
+        height: 30px;
+        width: 300px;
+        border-radius: 10px;
+        color: black;
+        border: 1px solid black;
+    }
+
+}
+
+.eye {
+
+    img {
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.blur {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 99;
+}
+
+.register_link_container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 13px;
+
+    p {
+        color: black;
+        margin: 0px !important;
+    }
+
+    .register_link {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: turquoise
+        }
+    }
+}
+
+.signup-box {
+    display: grid;
+    place-items: center;
+    animation: fadeInUp .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 99;
+}
+
+.login-box {
+    display: grid;
+    place-items: center;
+    animation: fadeInUp .5s;
+    position: absolute;
+    z-index: 99;
+}
+
+
+.pista {
+    color: #666666;
+    font-size: 10px;
+}
+
+/* form */
+
+.arrow {
+
+    margin: 20px;
+}
+
+
+
+
+.password-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    button {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+input:focus {
+    outline: none !important;
+    border: 2px solid #0066ff;
+}
+
+
+.log-button {
+    padding: 7px;
+    border-radius: 15px;
+    border: none;
+    background-color: #2266d3;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: white;
+}
+
+.log-button:hover {
+    color: white !important;
+    background-color: #478cf7;
+    cursor: pointer;
+}
+
+
+/* Login */

@@ -1,0 +1,41 @@
+/** Body **/
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+
+    background-attachment: fixed;
+    font-family: 'Poppins', monospace, sans-serif;
+    color: black;
+}
+
+.tracker {
+    width: 100px;
+    height: 100px;
+
+    script {
+        opacity: 0;
+        display: none;
+    }
+}
+
+h2 {
+    font-weight: 800 !important;
+    color: black !important;
+    font-size: 40px !important;
+    margin-top: 70px !important;
+
+    @media (min-width: 768px) {
+        font-size: 55px !important;
+        /*   margin-top: 35px !important; */
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 60px !important;
+        /*   margin-top: 35px !important; */
+    }
+}

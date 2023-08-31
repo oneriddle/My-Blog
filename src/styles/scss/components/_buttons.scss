@@ -1,0 +1,52 @@
+/* Buttons */
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    max-width: 300px;
+    margin: 25px 0px 25px 0px !important;
+}
+
+.go_back {
+    position: relative;
+    top: 1px;
+    opacity: .6;
+    transform: rotate(180deg) scale(.9);
+    transition: .2s ease-in-out;
+    z-index: 999;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.button-generic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 7px;
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 50px;
+    width: 160px;
+    font-family: monospace;
+    border: solid 0px transparent;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 99;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-decoration: none;
+    }
+}

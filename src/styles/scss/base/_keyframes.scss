@@ -1,0 +1,177 @@
+/** Keyframes **/
+
+@keyframes menubarside {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 69.5px;
+  }
+}
+
+
+@keyframes menuitem {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100px);
+  }
+
+  to {
+    transform: translateY(0);
+
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translateY(100px);
+
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+.fadeInUp {
+  animation: fadeInUp .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+// form
+
+/* @keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+} */
+
+
+.menuSideBar {
+  animation: menuitem .7s 1 backwards cubic-bezier(.47, .96, .31, .93) 0s;
+}
+
+.transition {
+  transition-duration: .1s;
+}
+
+.menuitem-0 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .05s;
+}
+
+.menuitem-1 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .1s;
+}
+
+.menuitem-2 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .15s;
+}
+
+.menuitem-3 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .2s;
+}
+
+.menuitem-4 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .25s;
+}
+
+.menuitem-5 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .3s;
+}
+
+.menuitem-6 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .35s;
+}
+
+.menuitem-7 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .4s;
+}
+
+.menuitem-8 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .45s;
+}
+
+.menuitem-9 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .5s;
+}
+
+.menuitem-10 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .55s;
+}
+
+.menuitem-11 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .6s;
+}
+
+.menuitem-12 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .65s;
+}
+
+.menuitem-13 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .7s;
+}
+
+.menuitem-14 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .75s;
+}
+
+.menuitem-15 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .8s;
+}
+
+.menuitem-16 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .85s;
+}
+
+.menuitem-17 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .9s;
+}
+
+.menuitem-18 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) .95s;
+}
+
+.menuitem-19 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) 1s;
+}
+
+.menuitem-20 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) 1.05s;
+}
+
+.menuitem-21 {
+  animation: menuitem .7s 1 backwards cubic-bezier(.34, 1.6, .42, .82) 1.1s;
+}

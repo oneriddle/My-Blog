@@ -1,0 +1,64 @@
+"use client";
+
+import axios from "axios";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const PostDetail = ({ params }: any) => {
+  const { id } = params;
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchDatos = async () => {
+      await peticionGet();
+    };
+    fetchDatos();
+  }, []);
+
+  const peticionGet = async () => {
+    const data = await axios.get("http://localhost:3000/api/blog/get");
+    const dataFilter = data.data.find((item: any) => item._id === id);
+    setData(dataFilter);
+  };
+
+  return (
+    <>
+      <div>
+        <section>
+          <div className="post-detail">
+            <h2>{data.titulo}</h2>
+            <h3>Por: {data.autor}</h3>
+            <div>
+              <Image
+                src={data.url}
+                width={600}
+                height={500}
+                className="image-main"
+                alt="Imagen"
+                title="Imagen"
+              />
+            </div>
+
+            <p>{data.contenido}</p>
+
+            <p className="fecha">{data.fecha}</p>
+
+            <Link href="/">
+              <Image
+                src={"/images/Icons/arrow-right-rounded.svg"}
+                alt="goBack"
+                className="go-back"
+                title="Ir a Blog"
+                width={60}
+                height={60}
+              />
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default PostDetail;

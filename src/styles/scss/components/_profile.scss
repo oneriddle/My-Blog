@@ -1,0 +1,33 @@
+.profile_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+
+    h2 {
+        margin-top: 0px !important;
+    }
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.103);
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.44);
+    -webkit-box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.44);
+    color: rgb(0, 0, 0);
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+
+    div {
+        padding: 10px;
+    }
+}
