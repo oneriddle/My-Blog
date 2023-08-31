@@ -90,6 +90,7 @@ const Blog = () => {
             })
             .map((e: any) => (
               <div
+                key={`${e.titulo}-${e.autor}`}
                 className="post-card"
                 onClick={() => {
                   router.push(`/${e._id}`);

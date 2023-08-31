@@ -44,7 +44,7 @@ const Posts = () => {
           {data.length == 0
             ? "Cargando..."
             : data.map((e: any) => (
-                <tr>
+                <tr key={`${e.titulo}-${e.autor}`}>
                   <td>{e.titulo}</td>
                   <td>{e.autor}</td>
                   <td>{e.fecha}</td>

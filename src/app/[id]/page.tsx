@@ -7,20 +7,19 @@ import { useEffect, useState } from "react";
 
 const PostDetail = ({ params }: any) => {
   const { id } = params;
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchDatos = async () => {
-      await peticionGet();
-    };
-    fetchDatos();
-  }, []);
+  const [data, setData] = useState<any>([]);
 
   const peticionGet = async () => {
     const data = await axios.get("http://localhost:3000/api/blog/get");
     const dataFilter = data.data.find((item: any) => item._id === id);
     setData(dataFilter);
   };
+  useEffect(() => {
+    const fetchDatos = async () => {
+      await peticionGet();
+    };
+    fetchDatos();
+  }, [peticionGet()]);
 
   return (
     <>
