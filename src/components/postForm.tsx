@@ -8,7 +8,7 @@ const PostForm = () => {
   const date = moment().add(3, "days").calendar();
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    /* e.preventDefault(); */
 
     const formData = new FormData(e.currentTarget);
     notifySuccess("Post creado");
