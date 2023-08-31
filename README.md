@@ -4,9 +4,9 @@ _Esta es una aplicación hecha con el framework de React, Next.js._
 
 _Me gustaria pulirle mas cosas sin embargo cumple con todos los criterios requeridos._
 
-## 🟢 App en linea en Vercel:
+<!-- ## 🟢 App en linea en Vercel:
 
-- [MiBlog](https://My-blog-u8qh.vercel.app/) - App en la nube de Vercel
+- [MiBlog](https://My-blog-u8qh.vercel.app/) - App en la nube de Vercel -->
 
 ## Screenshot
 

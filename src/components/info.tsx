@@ -9,9 +9,8 @@ const Info = () => {
         alt={"info"}
         width={60}
         height={60}
-        /* style={{ objectFit: "contain" }} */
         className="info_icon"
-        title="Site info"
+        title="App Info"
         onClick={() => alertInfo("info")}
       ></Image>
     </>

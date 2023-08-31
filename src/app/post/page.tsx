@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import BotonBorrar from "@/components/botonBorrar";
 import PostForm from "@/components/postForm";
+import { notifyInfo } from "@/utils/toast";
 import axios from "axios";
 import Image from "next/image";
-import { notifyInfo, notifySuccess } from "@/utils/toast";
-import { useRouter } from "next/navigation";
-import BotonBorrar from "@/components/botonBorrar";
+import { useEffect, useState } from "react";
 
 const Posts = () => {
   const [data, setData] = useState<any>([]);
@@ -24,7 +23,7 @@ const Posts = () => {
   };
 
   const peticionPut = (index: any, e: any) => {
-    notifyInfo(`Funcion editar en desarrollo id`);
+    notifyInfo(`Disponible en la proxima version...`);
   };
 
   return (
