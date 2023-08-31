@@ -20,7 +20,7 @@ const Blog = () => {
   }, []);
 
   const peticionGet = async () => {
-    const data = await axios.get("http://localhost:3000/api/blog/get");
+    const data = await axios.get("http://localhost:3000/api/blog");
     setData(data.data);
   };
 

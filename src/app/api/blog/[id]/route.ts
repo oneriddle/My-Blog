@@ -2,9 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/libs/mongodb";
 import BlogPost from "@/models/blogPost";
 
-connectDB();
-
-export const GET = async (req: Request) => {
+/* export const GET = async (req: Request, {params}: any) => {
   try {
     const id = req.url.split("api/blog/get/")[1];
     NextResponse.json({ id: id });
@@ -12,23 +10,52 @@ export const GET = async (req: Request) => {
   } catch (error) {
     console.log("error", error);
   }
-};
-/* export const PUT = async (req: Request) => {
-  try {
-    const id = req.url;
-    NextResponse.json({ id: id });
-    console.log("Put By ID" + id);
-  } catch (error) {
-    console.log("error", error);
-  }
 }; */
-/* export const DELETE = async (req: Request) => {
+
+export const GET = async (req: Request, { params }: any) => {
   try {
-    const id = req.url;
-    NextResponse.json({ id: id });
-    console.log("Delete By ID" + id);
+    const { id } = params;
+    await connectDB();
+    const oneFound = await BlogPost.findOne({ _id: id });
+    console.log("Get By ID" + id);
+    return NextResponse.json({
+      status: 200,
+      OneFound: oneFound,
+    });
   } catch (error) {
     console.log("error", error);
+    return NextResponse.json({ error: error });
   }
 };
- */
+
+export const PUT = async (req: Request, { params }: any) => {
+  try {
+    const { id } = params;
+    const { nuevoTitulo: titulo, nuevaDescripcion: contenido } =
+      await req.json();
+    await connectDB();
+    const oneEdited = await BlogPost.findByIdAndUpdate(id, {
+      titulo,
+      contenido,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return NextResponse.json({ error: error });
+  }
+};
+
+export const DELETE = async (req: Request, { params }: any) => {
+  try {
+    const { id } = params;
+    await connectDB();
+    const oneDeleted = await BlogPost.findByIdAndDelete(id);
+
+    return NextResponse.json({
+      status: 202,
+      message: "Post eliminado!",
+    });
+  } catch (error) {
+    console.log("error", error);
+    return NextResponse.json({ error: error, message: "Id no encontrado" });
+  }
+};

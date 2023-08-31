@@ -1,5 +1,6 @@
 "use client";
 
+import { notifyError } from "@/utils/toast";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,16 +11,25 @@ const PostDetail = ({ params }: any) => {
   const [data, setData] = useState<any>([]);
 
   const peticionGet = async () => {
-    const data = await axios.get("http://localhost:3000/api/blog/get");
-    const dataFilter = data.data.find((item: any) => item._id === id);
-    setData(dataFilter);
+    try {
+      const data = await axios.get(`http://localhost:3000/api/blog/${id}`);
+      setData(data.data.OneFound);
+    } catch (error) {
+      console.log(error);
+    }
   };
-  useEffect(() => {
-    const fetchDatos = async () => {
-      await peticionGet();
-    };
-    fetchDatos();
-  }, [peticionGet()]);
+
+  useEffect(
+    () => {
+      const fetchDatos = async () => {
+        await peticionGet();
+      };
+      fetchDatos();
+    },
+    [
+      /* peticionGet() */
+    ]
+  );
 
   return (
     <>

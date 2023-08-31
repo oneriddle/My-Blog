@@ -5,11 +5,11 @@ const Info = () => {
   return (
     <>
       <Image
-        src={"/images/Icons/Info.webp"}
+        src={"/images/Icons/informacion.png"}
         alt={"info"}
-        width={30}
-        height={30}
-        style={{ objectFit: "contain" }}
+        width={60}
+        height={60}
+        /* style={{ objectFit: "contain" }} */
         className="info_icon"
         title="Site info"
         onClick={() => alertInfo("info")}

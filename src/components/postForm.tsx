@@ -6,41 +6,49 @@ import { FormEvent } from "react";
 import { notifySuccess, notifyWarn } from "@/utils/toast";
 import moment from "moment";
 import { useState } from "react";
+import Posts from "@/app/post/page";
+import Image from "next/image";
 
-const PostForm = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+const PostForm = ({ peticionGet }: any) => {
+  const [file, setFile] = useState<File>();
   const date = moment().add(3, "days").calendar();
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
 
+      if (!file) return;
+
       const formData = new FormData(e.currentTarget);
 
-      const postResponse = await axios.post("/api/blog/post", {
+      const data = new FormData(e.currentTarget);
+      data.set("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: data,
+      });
+
+      if (res.ok) {
+        const imageURL = await res.text();
+        console.log("Se subio la imagen" + imageURL);
+      }
+
+      const postResponse = await axios.post("/api/blog", {
         titulo: formData.get("titulo"),
         autor: formData.get("autor"),
         fecha: formData.get("fecha"),
-        url: formData.get("url"),
+        url: `/images/upload/${file.name}`,
         contenido: formData.get("contenido"),
       });
       notifySuccess("Post creado");
-      console.log("postResponse", postResponse);
+      peticionGet();
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log("====================================");
-        console.log("error", error.response?.data.message);
-        console.log("====================================");
         notifyWarn(error.response?.data.message);
       }
+      console.error(error);
     }
-  };
-
-  const handleFileChange = (event: any) => {
-    notifySuccess("Cargando Imagen...");
-    const file = event.target.files[0];
-    setSelectedFile(file);
-    console.log("file", file);
   };
 
   return (
@@ -64,25 +72,22 @@ const PostForm = () => {
             <div className="form-row">
               <div className="input-data">
                 <input
-                  type="text"
-                  name="fecha"
-                  value={date}
-                  disabled
-                  required
-                />
-                <div className="underline"></div>
-                <label htmlFor=""></label>
-              </div>
-              <div className="input-data">
-                <input
                   type="file"
-                  name="image"
-                  onChange={handleFileChange}
+                  name="file"
+                  onChange={(event) => setFile(event.target.files?.[0])}
                   required
                 />
                 <div className="underline"></div>
                 <label htmlFor=""></label>
               </div>
+              {file && (
+                <Image
+                  src={URL.createObjectURL(file)}
+                  alt="MiImagen"
+                  width={100}
+                  height={100}
+                />
+              )}
               {/* <div className="input-data">
                 <input type="text" name="url" required />
                 <div className="underline"></div>
