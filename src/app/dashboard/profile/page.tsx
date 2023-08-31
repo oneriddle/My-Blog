@@ -10,7 +10,7 @@ const Profile = () => {
     <>
       <section>
         <div className="profile_container blur ">
-          <h2>Profile</h2>
+          <h2>Perfil</h2>
           <div className="profile-card">
             <div>
               <Image
@@ -21,11 +21,10 @@ const Profile = () => {
               />
             </div>
             <div>
-              <h3>Session</h3>
+              <h3>Sesion</h3>
               <p>Email: {session?.user?.email}</p>
-              <p>Password: *******</p>
-              <p>Status: {status}</p>
-              <p>Expires: {session?.expires}</p>
+              <p>Estatus: {status}</p>
+              <p>Expira: {session?.expires}</p>
             </div>
           </div>
         </div>

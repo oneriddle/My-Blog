@@ -4,7 +4,7 @@ const blogPostSchema = new Schema({
   titulo: {
     type: String,
     unique: true,
-    required: [true, "Titulo requerido"],
+    required: [true, "Título requerido"],
   },
   autor: {
     type: String,
@@ -25,8 +25,7 @@ const blogPostSchema = new Schema({
     type: String,
 
     required: [true, "Contenido requerido"],
-    minLength: [10, "Fullname must be at least 10 characters"],
-    maxLength: [500, "Fullname must be at most 500 characters"],
+    minLength: [10, "Ingresa al menos 10 caracteres"],
   },
 });
 

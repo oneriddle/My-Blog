@@ -306,6 +306,13 @@ h2 {
   }
 }
 
+.cargando-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .search-box {
   display: flex;
   justify-content: center;
@@ -980,7 +987,7 @@ form .form-row .textarea {
 
 .textarea textarea {
   resize: none;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .input-data label {

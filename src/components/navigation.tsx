@@ -98,7 +98,7 @@ const Navigation = () => {
                           height={30}
                           alt={"Logo"}
                         />
-                        <p>My Blog</p>
+                        <p>Mi Blog</p>
                       </div>
                     </Link>
                   </>
@@ -115,7 +115,7 @@ const Navigation = () => {
                         height={30}
                         alt={"Logo"}
                       />
-                      <p>My Blog</p>
+                      <p>Mi Blog</p>
                     </div>
                   </Link>
                 )}

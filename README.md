@@ -1,16 +1,16 @@
-# My Blog by thisisanti.dev
+# Mi Blog by thisisanti.dev
 
 _Esta es una aplicación hecha con el framework de React, Next.js._
 
-_Me gustaria pulirle mas cosas sin embargo cumple con todos los criterios de lo que se pide en la requisición._
+_Me gustaria pulirle mas cosas sin embargo cumple con todos los criterios requeridos._
 
 ## 🟢 App en linea en Vercel:
 
-- [MyBlog](https://my-blog-u8qh.vercel.app/) - App en la nube de Vercel
+- [MiBlog](https://My-blog-u8qh.vercel.app/) - App en la nube de Vercel
 
 ## Screenshot
 
-_Inicio My Blog_
+_Inicio Mi Blog_
 ![Imagen](/public/images/screenshots/chrome-capture-2023-7-30.png)
 
 ## Clonando 🚀
@@ -39,7 +39,7 @@ Un explorador como: Chrome, Firefox o Safari.
 _Abrir la carpeta de la app en VSCode_
 
 ```
-cd my-blog
+cd Mi-blog
 ```
 
 ```
@@ -76,7 +76,7 @@ Dentro de la app puedes:
 ```
 
 ```
-A disfrutar My Blog 🚀
+A disfrutar Mi Blog 🚀
 ```
 
 ## Iniciar Sass ⌨️

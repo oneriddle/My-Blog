@@ -31,7 +31,7 @@ export default function RootLayout({
           href="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"
           type="image"
         />
-        <title>My Blog</title>
+        <title>Mi Blog</title>
         {/* Meta */}
         <meta
           name="description"

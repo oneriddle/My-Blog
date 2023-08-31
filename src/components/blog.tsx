@@ -26,7 +26,7 @@ const Blog = () => {
 
   const options = [
     {
-      label: "Titulo",
+      label: "Título",
       value: "titulo",
     },
     {
@@ -51,7 +51,7 @@ const Blog = () => {
     <>
       <div className="search-box">
         <Select
-          defaultValue={{ label: "Titulo", value: selectedSupplier }}
+          defaultValue={{ label: "Título", value: selectedSupplier }}
           options={options}
           onChange={handleSelectChange}
           className="select-box"
@@ -65,16 +65,19 @@ const Blog = () => {
           }}
         />
       </div>
-
       <div className="blog-container">
         {data?.length == 0 ? (
-          <Image
-            src="/images/svg-loaders/three-dots.svg"
-            width={200}
-            height={200}
-            style={{ fill: "red" }}
-            alt="loader"
-          />
+          <div className="cargando-container">
+            <p>Cargando...</p>
+            <Image
+              src="/images/svg-loaders/three-dots.svg"
+              width={100}
+              height={100}
+              style={{ fill: "red" }}
+              alt="loader"
+            />
+            <p>Desde mongoDB</p>
+          </div>
         ) : (
           data
             ?.filter((val: any) => {
@@ -99,10 +102,10 @@ const Blog = () => {
                 <div className="card-header">
                   <h4>{e.titulo}</h4>
 
-                  <p>By: {e.autor}</p>
+                  <p>Por: {e.autor}</p>
                 </div>
                 <Image
-                  src={e.url}
+                  src={e?.url == null ? "" : e?.url}
                   width={300}
                   height={250}
                   alt="Imagen"
