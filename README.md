@@ -43,7 +43,7 @@ cd Mi-blog
 ```
 
 ```
-npm i && npm start
+npm i && npm run dev
 ```
 
 ```
