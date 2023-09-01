@@ -19,7 +19,7 @@ const Posts = () => {
 
   const peticionGet = async () => {
     const data = await axios.get("http://localhost:3000/api/blog");
-    setData(data.data);
+    setData(data.data.reverse());
   };
 
   const peticionPut = (index: any, e: any) => {
