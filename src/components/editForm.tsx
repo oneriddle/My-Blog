@@ -13,7 +13,7 @@ export default function EditForm({ id, title, description }: any) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
