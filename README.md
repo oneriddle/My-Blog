@@ -20,7 +20,7 @@ _Git clone para obtener un copia del proyecto_
 _Ejecuta en una terminal bash:_
 
 ```bash
-git clone https://github.com/santi-iztli/pokedex
+git clone https://github.com/SantiagoMorera/My-Blog
 ```
 
 ## Pre-requisitos 📋
