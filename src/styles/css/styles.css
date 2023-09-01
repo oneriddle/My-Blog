@@ -708,7 +708,7 @@ nav a:hover {
 }
 
 .logo_container {
-  padding: 10px;
+  /*  padding: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -852,7 +852,7 @@ nav a:hover {
   background-color: rgba(60, 60, 60, 0.05);
   box-shadow: 0px 0px 5px rgba(124, 124, 124, 0.1), 0.1;
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
   margin-left: 10px;
   margin-right: 10px;
   width: 100%;
