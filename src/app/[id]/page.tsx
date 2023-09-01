@@ -12,7 +12,7 @@ const PostDetail = ({ params }: any) => {
 
   const peticionGet = async () => {
     try {
-      const data = await axios.get(`http://localhost:3000/api/blog/${id}`);
+      const data = await axios.get(`/api/blog/${id}`);
       setData(data.data.OneFound);
     } catch (error) {
       console.log(error);
