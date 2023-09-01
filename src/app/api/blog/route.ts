@@ -3,6 +3,8 @@ import { connectDB } from "@/libs/mongodb";
 import BlogPost from "@/models/blogPost";
 
 import moment from "moment";
+require("moment/locale/es"); // Carga la localización en español
+moment.locale("es"); // Establece M
 
 connectDB();
 
