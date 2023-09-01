@@ -23,7 +23,7 @@ const Posts = () => {
   };
 
   const peticionPut = (index: any, e: any) => {
-    notifyInfo(`Disponible en la proxima version...`);
+    notifyInfo(`Disponible en la proxima versión...`);
   };
 
   return (
