@@ -10,7 +10,7 @@ const BotonBorrar = ({ id, peticionGet }: any) => {
     );
 
     if (confirmado) {
-      const res = await fetch(`http://localhost:3000/api/blog/${id}`, {
+      const res = await fetch(`/api/blog/${id}`, {
         method: "DELETE",
       });
 
