@@ -85,6 +85,7 @@ const PostForm = ({ peticionGet }: any) => {
                   src={URL.createObjectURL(file)}
                   alt="MiImagen"
                   width={100}
+                  style={{ objectFit: "contain" }}
                   height={100}
                 />
               )}
