@@ -1,4 +1,5 @@
-/* Base */ /** Reset **/
+/* Base */
+/** Reset **/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap");
 *,
 *::before,
@@ -401,13 +402,43 @@ td {
   width: 200px;
 }
 
-/* Apply specific styles to <td> elements in the first row */
-tr:first-child td {
-  background-color: #f0f0f0;
+tr th {
+  text-align: center;
+}
+tr .cargando {
+  text-align: center;
 }
 
 /* Apply specific styles to even <td> elements in the second row */
+tr:nth-child(1) td:nth-child(even) {
+  background-color: rgba(199, 199, 199, 0.2);
+}
+
 tr:nth-child(2) td:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+tr:nth-child(3) td:nth-child(even) {
+  background-color: rgba(199, 199, 199, 0.2);
+}
+
+tr:nth-child(4) td:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+tr:nth-child(5) td:nth-child(even) {
+  background-color: rgba(199, 199, 199, 0.2);
+}
+
+tr:nth-child(6) td:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+tr:nth-child(7) td:nth-child(even) {
+  background-color: rgba(199, 199, 199, 0.2);
+}
+
+tr:nth-child(8) td:nth-child(even) {
   background-color: #e0e0e0;
 }
 
@@ -572,6 +603,17 @@ tr:nth-child(2) td:nth-child(even) {
   border: 1px solid black;
 }
 
+.password-row-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.password-row-signup input {
+  width: 275px;
+}
+
 .blur {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -698,6 +740,9 @@ nav a:hover {
   padding: 5px;
   transition: all 0.3s ease;
   transform: translateY(-2px);
+}
+.activo div p {
+  color: turquoise !important;
 }
 
 .logo_container {

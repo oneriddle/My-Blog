@@ -43,6 +43,18 @@
 
 }
 
+.password-row-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    input {
+        width: 275px
+    }
+}
+
 
 
 .blur {

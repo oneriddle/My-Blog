@@ -4,11 +4,13 @@ import { notifyInfo } from "@/utils/toast";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const pathname = usePathname();
   const session = useSession();
+  const router = useRouter();
 
   const toggleNavbar = () => {
     if (window.innerWidth < 990) {
@@ -51,10 +53,8 @@ const Navigation = () => {
         toggleNavbar();
 
         setTimeout(() => {
-          return signOut();
+          signOut();
         }, 500);
-
-        return;
       },
     },
   ];
@@ -90,6 +90,9 @@ const Navigation = () => {
                       href="/"
                       style={{ textDecoration: "none" }}
                       onClick={toggleNavbar}
+                      className={
+                        pathname === "/" ? "nav-link activo" : "nav-link "
+                      }
                     >
                       <div className="logo_container">
                         <Image
@@ -107,6 +110,9 @@ const Navigation = () => {
                     href="/"
                     style={{ textDecoration: "none" }}
                     onClick={toggleNavbar}
+                    className={
+                      pathname === "/" ? "nav-link activo" : "nav-link "
+                    }
                   >
                     <div className="logo_container">
                       <Image

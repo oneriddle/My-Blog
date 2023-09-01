@@ -19,6 +19,13 @@ const PostDetail = ({ params }: any) => {
     }
   };
 
+  const loaded = (img: any) => {
+    const previewImage = document.getElementById("loader");
+    previewImage?.classList.add("display-none");
+    img.classList.remove("display-none");
+    img.classList.remove("opacity-0");
+  };
+
   useEffect(
     () => {
       const fetchDatos = async () => {
@@ -35,34 +42,50 @@ const PostDetail = ({ params }: any) => {
     <>
       <div>
         <section>
-          <div className="post-detail">
-            <h2>{data.titulo}</h2>
-            <h3>Por: {data.autor}</h3>
-            <div>
-              <Image
-                src={data.url}
-                width={600}
-                height={500}
-                className="image-main"
-                alt="Imagen"
-                title="Imagen"
-              />
-            </div>
+          <div className="post-detail animate__animated animate__fadeIn">
+            {data?.length == 0 ? (
+              <div className="cargando-container">
+                <p>Cargando...</p>
+                <Image
+                  src="/images/svg-loaders/three-dots.svg"
+                  width={100}
+                  height={100}
+                  style={{ fill: "red" }}
+                  alt="loader"
+                />
+                <p>Desde mongoDB</p>
+              </div>
+            ) : (
+              <>
+                <h2>{data.titulo}</h2>
+                <h3>Por: {data.autor}</h3>
+                <div>
+                  <Image
+                    src={data.url}
+                    width={600}
+                    height={500}
+                    className="image-main"
+                    alt="Imagen"
+                    title="Imagen"
+                  />
+                </div>
 
-            <p>{data.contenido}</p>
+                <p>{data.contenido}</p>
 
-            <p className="fecha">{data.fecha}</p>
+                <p className="fecha">{data.fecha}</p>
 
-            <Link href="/">
-              <Image
-                src={"/images/Icons/arrow-right-rounded.svg"}
-                alt="goBack"
-                className="go-back"
-                title="Ir a Blog"
-                width={60}
-                height={60}
-              />
-            </Link>
+                <Link href="/">
+                  <Image
+                    src={"/images/Icons/arrow-right-rounded.svg"}
+                    alt="goBack"
+                    className="go-back"
+                    title="Ir a Blog"
+                    width={60}
+                    height={60}
+                  />
+                </Link>
+              </>
+            )}
           </div>
         </section>
       </div>

@@ -28,10 +28,10 @@ const Posts = () => {
 
   return (
     <>
-      <section>
+      <section className="animate__animated animate__fadeIn">
         <PostForm peticionGet={peticionGet} />
         <h2> Post recientes </h2>
-        <table className="post-card">
+        <table className="post-card animate__animated animate__fadeIn">
           <thead>
             <tr>
               <th>Título</th>
@@ -42,16 +42,23 @@ const Posts = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((e: any, index: any) => (
-              <tr key={index}>
-                <td>{e.titulo}</td>
-                <td>{e.autor}</td>
-                <td>{e.fecha}</td>
-                <td>{e.contenido.slice(0, 100)}</td>
-                <td>
-                  <div className="action-container">
-                    <BotonBorrar id={e._id} peticionGet={peticionGet} />
-                    {/* <Image
+            {data?.length == 0 ? (
+              <tr>
+                <td className="cargando" colSpan={5}>
+                  Cargando...
+                </td>
+              </tr>
+            ) : (
+              data.map((e: any, index: any) => (
+                <tr key={index}>
+                  <td>{e.titulo}</td>
+                  <td>{e.autor}</td>
+                  <td>{e.fecha}</td>
+                  <td>{e.contenido.slice(0, 60)}</td>
+                  <td>
+                    <div className="action-container">
+                      <BotonBorrar id={e._id} peticionGet={peticionGet} />
+                      {/* <Image
                       src="https://cdn-icons-png.flaticon.com/512/1828/1828270.png"
                       width={30}
                       height={30}
@@ -59,10 +66,11 @@ const Posts = () => {
                       title="Editar"
                       onClick={(e) => peticionPut(index, e)}
                     /> */}
-                  </div>
-                </td>
-              </tr>
-            ))}
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </section>

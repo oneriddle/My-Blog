@@ -9,7 +9,7 @@ const Profile = () => {
   return (
     <>
       <section>
-        <div className="profile_container blur ">
+        <div className="profile_container animate__animated animate__fadeIn ">
           <h2>Perfil</h2>
           <div className="profile-card">
             <div>

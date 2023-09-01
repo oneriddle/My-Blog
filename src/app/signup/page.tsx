@@ -74,14 +74,14 @@ const SignUpForm = ({ onLogin }: any) => {
             type="email"
           />
 
-          <div className="password-row">
+          <div className="password-row-signup">
             <input
               placeholder="Password"
               name="password"
               required
               type={!showPass ? "text" : "password"}
               id="password"
-              className="m-1"
+              /* className="m-1" */
             />
 
             <div onClick={onChange}>
