@@ -10,11 +10,10 @@
     "sass": "sass --watch src/styles/scss/styles.scss src/styles/css/styles.css"
   },
   "dependencies": {
-    "@stdlib/string": "^0.0.14",
-    "@stdlib/types": "^0.0.14",
     "@types/bcryptjs": "^2.4.2",
     "@types/react": "18.2.20",
     "@types/react-select": "^5.0.1",
+    "@vercel/analytics": "^1.0.2",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.15",
     "axios": "^1.4.0",
