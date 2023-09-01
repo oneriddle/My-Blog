@@ -94,8 +94,8 @@ const Navigation = () => {
                       <div className="logo_container">
                         <Image
                           src="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"
-                          width={30}
-                          height={30}
+                          width={20}
+                          height={20}
                           alt={"Logo"}
                         />
                         <p>Mi Blog</p>
@@ -111,8 +111,8 @@ const Navigation = () => {
                     <div className="logo_container">
                       <Image
                         src="https://cdn-icons-png.flaticon.com/512/3959/3959542.png"
-                        width={30}
-                        height={30}
+                        width={20}
+                        height={20}
                         alt={"Logo"}
                       />
                       <p>Mi Blog</p>
@@ -142,8 +142,8 @@ const Navigation = () => {
                         >
                           <Image
                             src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png"
-                            width={30}
-                            height={30}
+                            width={20}
+                            height={20}
                             className="rueda"
                             alt={"Logo"}
                           />
@@ -173,8 +173,8 @@ const Navigation = () => {
                         >
                           <Image
                             src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png"
-                            width={30}
-                            height={30}
+                            width={20}
+                            height={20}
                             className="rueda"
                             alt={"Logo"}
                           />
