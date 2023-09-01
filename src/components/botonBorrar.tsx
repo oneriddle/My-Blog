@@ -8,7 +8,7 @@ import { notifySuccess } from "@/utils/toast";
 const BotonBorrar = ({ id, peticionGet }: any) => {
   const borrarPost = async () => {
     const confirmado = confirm(
-      "¿ Estas seguro ? esta operacion no se puede deshacer"
+      "¿ Estás seguro ? esta operacion no se puede deshacer"
     );
 
     if (confirmado) {
