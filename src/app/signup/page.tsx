@@ -34,10 +34,10 @@ const SignUpForm = ({ onLogin }: any) => {
       });
 
       if (res?.ok) {
-        notifySuccess("Signup Success");
-        notifySuccess("Login Success");
+        notifySuccess("Registro exitoso");
+        notifySuccess("Bienvenido");
         setTimeout(() => {
-          return router.push("/dashboard/profile");
+          return router.push("/post");
         }, 500);
       }
     } catch (error) {

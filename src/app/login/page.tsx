@@ -1,6 +1,6 @@
 "use client";
 
-import { notifyInfo, notifyWarn } from "@/utils/toast";
+import { notifyInfo, notifySuccess, notifyWarn } from "@/utils/toast";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,7 +30,8 @@ const LoginPage = () => {
     if (res?.error) return notifyWarn(res.error as string);
 
     if (res?.ok) {
-      return router.push("/dashboard/profile");
+      notifySuccess("Bienvenido");
+      return router.push("/post");
     }
   };
 
