@@ -40,7 +40,7 @@ const LoginPage = () => {
       <div className="generic_container  animate__animated animate__fadeIn blur">
         <form onSubmit={handdleSubmit}>
           <h2>Iniciar Sesion</h2>
-          <p>Para administrar el Blog necesitas iniciar sesion</p>
+          <p>Para administrar Mi Blog necesitas iniciar sesion</p>
           <Image
             src="/images/Icons/Login.webp"
             className="arrow"
