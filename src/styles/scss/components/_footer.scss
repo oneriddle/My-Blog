@@ -11,10 +11,13 @@
     color: rgb(201, 201, 201);
     margin-top: 30px;
     z-index: 99;
+    font-family: "Poppins", monospace;
 
 
     p {
         margin: 0;
         font-style: italic;
+        font-weight: 200;
+        font-size: 13px;
     }
 }
