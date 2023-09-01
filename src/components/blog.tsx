@@ -127,7 +127,9 @@ const Blog = () => {
                   title="Imagen"
                 />
                 <div className="card-footer">
-                  <p className="contenido">{e.contenido.slice(0, 60)}</p>
+                  <p className="contenido">
+                    {e.contenido.slice(0, 60).concat("...")}
+                  </p>
                 </div>
                 <p className="fecha">{e.fecha}</p>
               </div>

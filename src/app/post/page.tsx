@@ -54,7 +54,7 @@ const Posts = () => {
                   <td>{e.titulo}</td>
                   <td>{e.autor}</td>
                   <td>{e.fecha}</td>
-                  <td>{e.contenido.slice(0, 60)}</td>
+                  <td>{e.contenido.slice(0, 60).concat("...")}</td>
                   <td>
                     <div className="action-container">
                       <BotonBorrar id={e._id} peticionGet={peticionGet} />

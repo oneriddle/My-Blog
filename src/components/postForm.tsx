@@ -41,6 +41,7 @@ const PostForm = ({ peticionGet }: any) => {
         url: `/images/upload/${file.name}`,
         contenido: formData.get("contenido"),
       });
+
       notifySuccess("Post creado");
       peticionGet();
     } catch (error) {
