@@ -81,10 +81,22 @@ const Blog = () => {
             />
             <p>Desde mongoDB</p>
           </div>
+        ) : data?.filter((val: any) => {
+            if (searchTerm == "") {
+              return val;
+            } else if (
+              val[selectedSupplier]
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+            ) {
+              return val;
+            }
+          }).length === 0 ? (
+          <p>No hay resultados. Use otra búsqueda.</p>
         ) : (
           data
             ?.filter((val: any) => {
-              if (searchTerm == "") {
+              if (searchTerm === "") {
                 return val;
               } else if (
                 val[selectedSupplier]
