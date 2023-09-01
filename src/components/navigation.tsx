@@ -137,7 +137,7 @@ const Navigation = () => {
                               : "nav-link "
                           }
                           aria-current="page"
-                          href={link.path}
+                          href={"/post"}
                           onClick={toggleNavbar}
                         >
                           <Image
@@ -168,7 +168,7 @@ const Navigation = () => {
                               : "nav-link "
                           }
                           aria-current="page"
-                          href={link.path}
+                          href={"/post"}
                           onClick={toggleNavbar}
                         >
                           <Image
