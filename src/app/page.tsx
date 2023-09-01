@@ -11,7 +11,7 @@ const IndexPage = async () => {
             Hola, soy ingeniero de software senior en la empresa. Disfruto
             trabajando con Next.js y creando hermosas experiencias de front-end.
           </p>
-          <p>Elige el post de tu preferencia</p>
+          <p>Elige el Post de tu preferencia</p>
           <Blog />
         </div>
       </section>

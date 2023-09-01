@@ -51,7 +51,7 @@ const SignUpForm = ({ onLogin }: any) => {
     <section>
       <div className="generic_container animate__animated animate__fadeIn blur">
         <form onSubmit={handdleSubmit}>
-          <h2>Registrarte</h2>
+          <h2>Crear una cuenta</h2>
           <Image
             src="/images/Icons/SignUp.webp"
             className="arrow"
@@ -101,7 +101,7 @@ const SignUpForm = ({ onLogin }: any) => {
           </button>
         </form>
         <div className="register_link_container">
-          <p>¡Ya tienes una cuenta!</p>
+          <p>¿Ya tienes una cuenta?</p>
           <Link className="register_link" href={"/login"}>
             Inicia sesion
           </Link>

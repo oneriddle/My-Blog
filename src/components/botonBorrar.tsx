@@ -1,9 +1,7 @@
 "use client";
 
-import { HiOutlineTrash } from "react-icons/hi";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { notifySuccess } from "@/utils/toast";
+import Image from "next/image";
 
 const BotonBorrar = ({ id, peticionGet }: any) => {
   const borrarPost = async () => {
@@ -31,6 +29,7 @@ const BotonBorrar = ({ id, peticionGet }: any) => {
         height={30}
         alt="borrar"
         title="Borrar"
+        style={{ cursor: "pointer" }}
         onClick={borrarPost}
       />
     </>
