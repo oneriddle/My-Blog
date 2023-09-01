@@ -4,7 +4,7 @@ export function alertInfo(params: string) {
   if (params) {
     Swal.fire({
       icon: "info",
-      title: "App developed with: <br/> <span>Next.js | OAuth 2.0 <span/>",
+      title: "App developed with: <br/> <span>Next.js<span/>",
       text: "Version: 13.4.13",
       focusConfirm: false,
       confirmButtonText: "Great!",
