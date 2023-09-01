@@ -137,7 +137,7 @@ const Navigation = () => {
                               : "nav-link "
                           }
                           aria-current="page"
-                          href={"http://localhost:3000/post"}
+                          href={link.path}
                           onClick={toggleNavbar}
                         >
                           <Image
@@ -168,7 +168,7 @@ const Navigation = () => {
                               : "nav-link "
                           }
                           aria-current="page"
-                          href={"http://localhost:3000/post"}
+                          href={"/login"}
                           onClick={toggleNavbar}
                         >
                           <Image
