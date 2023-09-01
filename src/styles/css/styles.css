@@ -355,7 +355,7 @@ h2 {
   border: 2px solid #2884FF;
 }
 
-.css-t3ipsp-control {
+#control {
   width: 280px;
 }
 
@@ -572,19 +572,6 @@ tr:nth-child(2) td:nth-child(even) {
   border: 1px solid black;
 }
 
-.eye {
-  cursor: pointer;
-}
-.eye img {
-  cursor: pointer;
-}
-.eye img:hover {
-  transform: scale(1.2);
-}
-.eye:hover {
-  transform: scale(1.2);
-}
-
 .blur {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -647,12 +634,12 @@ tr:nth-child(2) td:nth-child(even) {
   flex-direction: row;
   width: 100%;
 }
-.password-row button {
-  width: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.password-row input {
+  width: 80%;
+}
+.password-row img {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 input:focus {

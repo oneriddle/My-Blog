@@ -57,6 +57,7 @@ const Blog = () => {
           options={options}
           onChange={handleSelectChange}
           className="select-box"
+          isSearchable={false}
         />
         <input
           name={"buscar"}

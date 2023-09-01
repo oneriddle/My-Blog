@@ -43,22 +43,7 @@
 
 }
 
-.eye {
 
-    img {
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.2);
-    }
-}
 
 .blur {
     backdrop-filter: blur(3px);
@@ -132,13 +117,21 @@
     flex-direction: row;
     width: 100%;
 
-    button {
-        width: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    input {
+        width: 80%;
     }
+
+
+
+    img {
+        cursor: pointer;
+        transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+    }
+
+
+
 }
 
 

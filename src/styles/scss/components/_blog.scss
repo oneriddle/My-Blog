@@ -93,6 +93,11 @@ $color: rgba(124, 124, 124, 0.1);
     align-items: center;
     flex-direction: column-reverse;
 
+
+    div {
+        div {}
+    }
+
     .css-1fdsijx-ValueContainer {
         width: 241px;
 
@@ -140,7 +145,7 @@ $color: rgba(124, 124, 124, 0.1);
     }
 }
 
-.css-t3ipsp-control {
+#control {
     width: 280px;
 }
 
