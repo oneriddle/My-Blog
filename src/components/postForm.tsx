@@ -1,16 +1,16 @@
-"use client";
-
 import axios, { AxiosError } from "axios";
-import { FormEvent } from "react";
-
+import { FormEvent, useState } from "react";
 import { notifySuccess, notifyWarn } from "@/utils/toast";
 import moment from "moment";
-import { useState } from "react";
 import Posts from "@/app/post/page";
 import Image from "next/image";
 
 const PostForm = ({ peticionGet }: any) => {
   const [file, setFile] = useState<File>();
+  const [titulo, setTitulo] = useState("");
+  const [autor, setAutor] = useState("");
+  const [contenido, setContenido] = useState("");
+
   const date = moment().add(3, "days").calendar();
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -31,7 +31,7 @@ const PostForm = ({ peticionGet }: any) => {
 
       if (res.ok) {
         const imageURL = await res.text();
-        console.log("Se subio la imagen" + imageURL);
+        console.log("Se subió la imagen" + imageURL);
       }
 
       const postResponse = await axios.post("/api/blog", {
@@ -41,6 +41,11 @@ const PostForm = ({ peticionGet }: any) => {
         url: `/images/upload/${file.name}`,
         contenido: formData.get("contenido"),
       });
+
+      setTitulo("");
+      setAutor("");
+      setContenido("");
+      setFile(undefined);
 
       notifySuccess("Post creado");
       peticionGet();
@@ -60,12 +65,24 @@ const PostForm = ({ peticionGet }: any) => {
           <form onSubmit={handdleSubmit}>
             <div className="form-row">
               <div className="input-data">
-                <input type="text" name="titulo" required />
+                <input
+                  type="text"
+                  name="titulo"
+                  value={titulo}
+                  onChange={(e) => setTitulo(e.target.value)}
+                  required
+                />
                 <div className="underline"></div>
                 <label htmlFor="">Título</label>
               </div>
               <div className="input-data">
-                <input type="text" name="autor" required />
+                <input
+                  type="text"
+                  name="autor"
+                  value={autor}
+                  onChange={(e) => setAutor(e.target.value)}
+                  required
+                />
                 <div className="underline"></div>
                 <label htmlFor="">Autor</label>
               </div>
@@ -90,18 +107,13 @@ const PostForm = ({ peticionGet }: any) => {
                   height={100}
                 />
               )}
-              {/* <div className="input-data">
-                <input type="text" name="url" required />
-                <div className="underline"></div>
-                <label htmlFor="">Imagen URL</label>
-              </div> */}
             </div>
             <div className="form-row">
               <div className="input-data textarea">
                 <textarea
-                  /*               rows="8"
-                  cols="80" */
                   name="contenido"
+                  value={contenido}
+                  onChange={(e) => setContenido(e.target.value)}
                   required
                 ></textarea>
                 <br />
