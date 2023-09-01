@@ -129,18 +129,27 @@ const Navigation = () => {
                       key={link.id}
                       className="nav-item d-flex justify-content-center "
                     >
-                      <Link
-                        className={
-                          pathname === link.path
-                            ? "nav-link activo"
-                            : "nav-link "
-                        }
-                        aria-current="page"
-                        href={link.path}
-                        onClick={toggleNavbar}
-                      >
-                        {link.name}
-                      </Link>
+                      <div className="logo_container">
+                        <Link
+                          className={
+                            pathname === link.path
+                              ? "nav-link activo"
+                              : "nav-link "
+                          }
+                          aria-current="page"
+                          href={link.path}
+                          onClick={toggleNavbar}
+                        >
+                          <Image
+                            src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png"
+                            width={30}
+                            height={30}
+                            className="rueda"
+                            alt={"Logo"}
+                          />
+                          {link.name}
+                        </Link>
+                      </div>
                     </li>
                   ))}
                 </>
@@ -151,18 +160,27 @@ const Navigation = () => {
                       key={link.id}
                       className="nav-item d-flex justify-content-center "
                     >
-                      <Link
-                        className={
-                          pathname === link.path
-                            ? "nav-link activo"
-                            : "nav-link "
-                        }
-                        aria-current="page"
-                        href={link.path}
-                        onClick={toggleNavbar}
-                      >
-                        {link.name}
-                      </Link>
+                      <div className="logo_container">
+                        <Link
+                          className={
+                            pathname === link.path
+                              ? "nav-link activo"
+                              : "nav-link "
+                          }
+                          aria-current="page"
+                          href={link.path}
+                          onClick={toggleNavbar}
+                        >
+                          <Image
+                            src="https://cdn-icons-png.flaticon.com/512/3132/3132084.png"
+                            width={30}
+                            height={30}
+                            className="rueda"
+                            alt={"Logo"}
+                          />
+                          {link.name}
+                        </Link>
+                      </div>
                     </li>
                   ))}
                 </>

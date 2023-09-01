@@ -665,6 +665,13 @@ nav a:hover {
   transition: all 0.1s ease;
 }
 
+.rueda {
+  transition: transform 0.3s ease;
+}
+.rueda:hover {
+  transform: rotate(360deg);
+}
+
 .nav-item {
   transition: all 0.3s ease;
 }

@@ -24,6 +24,14 @@ nav {
   }
 }
 
+.rueda {
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+
 
 .nav-item {
   transition: all .3s ease;

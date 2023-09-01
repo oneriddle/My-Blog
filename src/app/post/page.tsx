@@ -51,14 +51,14 @@ const Posts = () => {
                 <td>
                   <div className="action-container">
                     <BotonBorrar id={e._id} peticionGet={peticionGet} />
-                    <Image
+                    {/* <Image
                       src="https://cdn-icons-png.flaticon.com/512/1828/1828270.png"
                       width={30}
                       height={30}
                       alt="editar"
                       title="Editar"
                       onClick={(e) => peticionPut(index, e)}
-                    />
+                    /> */}
                   </div>
                 </td>
               </tr>

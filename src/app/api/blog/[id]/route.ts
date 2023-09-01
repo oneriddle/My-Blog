@@ -2,22 +2,11 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/libs/mongodb";
 import BlogPost from "@/models/blogPost";
 
-/* export const GET = async (req: Request, {params}: any) => {
-  try {
-    const id = req.url.split("api/blog/get/")[1];
-    NextResponse.json({ id: id });
-    console.log("Get By ID" + id);
-  } catch (error) {
-    console.log("error", error);
-  }
-}; */
-
 export const GET = async (req: Request, { params }: any) => {
   try {
     const { id } = params;
     await connectDB();
     const oneFound = await BlogPost.findOne({ _id: id });
-    console.log("Get By ID" + id);
     return NextResponse.json({
       status: 200,
       OneFound: oneFound,
