@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 const PostDetail = ({ params }: any) => {
   const { id } = params;
   const [data, setData] = useState<any>([]);
+  const [online , setOnline] = useState(true);
 
 
   const peticionGet = async () => {
@@ -20,7 +21,6 @@ const PostDetail = ({ params }: any) => {
         setData(serverData);
         localStorage.setItem(`/api/blog/${id}`, JSON.stringify(serverData));
       } else {
-        console.log('navegador online', navigator.onLine);
   
         const localStorageData = localStorage.getItem(`/api/blog/${id}`);
   
@@ -28,6 +28,7 @@ const PostDetail = ({ params }: any) => {
 
           setData(JSON.parse(localStorageData));
         } else {
+          setOnline(false);
           notifyError("No hay conexión ni datos almacenados.");
         }
       }
@@ -51,14 +52,30 @@ const PostDetail = ({ params }: any) => {
           <div className="post-detail animate__animated animate__fadeIn">
             {data?.length == 0 ? (
               <div className="cargando-container">
-                <p>{!navigator.onLine ? "No hay conexión ni datos offline" : "Cargando..."}</p>
-                {!navigator.onLine ? "😔" : <Image
-                  src="/images/svg-loaders/three-dots.svg"
-                  width={100}
-                  height={100}
-                  style={{ fill: "red" }}
-                  alt="loader"
-                />}
+                 {
+              online ? 
+              (
+                <>
+                <Image
+            src="/images/svg-loaders/three-dots.svg"
+            width={100}
+            height={100}
+            style={{ fill: "red" }}
+            alt="loader"
+          />
+                <p>Cargando...</p>
+                </>
+              ):
+
+              (
+                <>
+                <p>😔</p>
+                <p>No hay conexión ni datos offline</p>
+                </>
+              )
+
+              
+            }
                 
               </div>
             ) : (

@@ -11,49 +11,13 @@ const Blog = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSupplier, setSelectedSupplier] = useState("titulo");
+  const [online, setOnline] = useState(true);
   const router = useRouter();
-
-  useEffect(() => {
-    const fetchDatos = async () => {
-      await peticionGet();
-    };
-    fetchDatos();
-  }, []);
-
-/*   const peticionGet = async () => {
-    const data = await axios.get("/api/blog");
-
-    const Posts = data?.data;
-    setData(Posts.reverse());
-  }; */
-
-
-  /* const peticionGet = async () => {
-    // Verificar si hay datos en localStorage
-    const localData = localStorage.getItem("/api/blog");
-  
-    if (localData) {
-      // Si hay datos en localStorage, usarlos en lugar de hacer la petición
-      const parsedData = JSON.parse(localData);
-      setData(parsedData.reverse());
-    } else {
-      // Si no hay datos en localStorage, hacer la petición HTTP
-      const response = await axios.get("/api/blog");
-      const responseData = response?.data;
-  
-      // Guardar los datos en localStorage
-      localStorage.setItem("/api/blog", JSON.stringify(responseData));
-  
-      // Actualizar el estado con los datos obtenidos
-      setData(responseData.reverse());
-    }
-  }; */
 
   const peticionGet = async () => {
     try {
       if (navigator.onLine) {
-        console.log('navegador online', navigator.onLine);
-        
+ 
         // Si hay conexión, realizar la petición Axios
         const response = await axios.get("/api/blog");
         const Posts = response?.data;
@@ -64,7 +28,6 @@ const Blog = () => {
         // Guardar los datos en localStorage para futuras cargas
         localStorage.setItem("blogData", JSON.stringify(Posts));
       } else {
-        console.log('navegador online', navigator.onLine);
         
         // No hay conexión, verificar si hay datos en localStorage
         const localStorageData = localStorage.getItem("blogData");
@@ -75,12 +38,20 @@ const Blog = () => {
         } else {
           // No hay conexión ni datos en localStorage
           notifyError("No hay conexión ni datos almacenados localmente.");
+          setOnline(false);
         }
       }
     } catch (error) {
       console.error("Error al realizar la petición:", error);
     }
   };
+
+  useEffect(() => {
+    const fetchDatos = async () => {
+      await peticionGet();
+    };
+    fetchDatos();
+  }, []);
   
   
 
@@ -129,15 +100,32 @@ const Blog = () => {
       <div className="blog-container">
         {data?.length == 0 ? (
           <div className="cargando-container">
-          <p>{!navigator.onLine ? "No hay conexión ni datos offline" : "Cargando..."}</p>
-          {!navigator.onLine ? "😔" : <Image
+            
+
+            {
+              online ? 
+              (
+                <>
+                <Image
             src="/images/svg-loaders/three-dots.svg"
             width={100}
             height={100}
             style={{ fill: "red" }}
             alt="loader"
-          />}
-          
+          />
+                <p>Cargando...</p>
+                </>
+              ):
+
+              (
+                <>
+                <p>😔</p>
+                <p>No hay conexión ni datos offline</p>
+                </>
+              )
+
+              
+            }
         </div>
         ) : data?.filter((val: any) => {
             if (searchTerm == "") {
