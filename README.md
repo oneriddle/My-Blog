@@ -11,7 +11,7 @@ _Me gustaria pulirle mas cosas sin embargo cumple con todos los criterios requer
 ## Screenshot
 
 _Inicio Mi Blog_
-![Imagen](/public/images/screenshots/chrome-capture-2023-7-30.png)
+![Imagen](/public/images/screenshots/screenshot.png)
 
 ## Clonando 🚀
 
