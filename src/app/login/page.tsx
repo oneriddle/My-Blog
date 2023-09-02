@@ -17,34 +17,37 @@ const LoginPage = () => {
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(!navigator.onLine ){
+    try {
+      if(!navigator.onLine ){
       
-      notifyError("No hay conexión")
-    }else{
-     
-      notifyInfo("Cargando... ⏳");
-    const body = new FormData(e.currentTarget);
-
-    const res = await signIn("credentials", {
-      email: body.get("email"),
-      password: body.get("password"),
-
-      redirect: false,
-    });
-
-   
-    
-
-    if (res?.error) return notifyWarn(res.error as string);
-
-    if (res?.ok) {
-      notifySuccess("Bienvenido");
-      return router.push("/post");
+        notifyError("No hay conexión")
+      }else{
+       
+        notifyInfo("Cargando... ⏳");
+      const body = new FormData(e.currentTarget);
+  
+      const res = await signIn("credentials", {
+        email: body.get("email"),
+        password: body.get("password"),
+  
+        redirect: false,
+      });
+  
+      if (res?.error) return notifyWarn(res.error as string);
+      if (res?.ok) {
+        notifySuccess("Bienvenido");
+        return router.push("/post");
+      }
+      if (!res?.ok) {
+        notifyError('Error de conexión')
+      }
     }
-    if (!res?.ok) {
+      
+    } catch (error) {
       notifyError('Error de conexión')
     }
-  }
+  
+
   };
 
   return (

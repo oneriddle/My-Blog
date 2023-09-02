@@ -17,15 +17,11 @@ const PostDetail = ({ params }: any) => {
       if (navigator.onLine) {
         const response = await axios.get(`/api/blog/${id}`);
         const serverData = response?.data?.OneFound;
-
         setData(serverData);
         localStorage.setItem(`/api/blog/${id}`, JSON.stringify(serverData));
       } else {
-  
         const localStorageData = localStorage.getItem(`/api/blog/${id}`);
-  
         if (localStorageData) {
-
           setData(JSON.parse(localStorageData));
         } else {
           setOnline(false);
@@ -36,7 +32,6 @@ const PostDetail = ({ params }: any) => {
       console.error("Error al realizar la petición:", error);
     }
   };
-
 
   useEffect(() => {
     const fetchDatos = async () => {
@@ -73,8 +68,6 @@ const PostDetail = ({ params }: any) => {
                 <p>No hay conexión ni datos offline</p>
                 </>
               )
-
-              
             }
                 
               </div>
@@ -92,11 +85,8 @@ const PostDetail = ({ params }: any) => {
                     title="Imagen"
                   />
                 </div>
-
                 <p>{data.contenido}</p>
-
                 <p className="fecha">{data.fecha}</p>
-
                 <Link href="/">
                   <Image
                     src={"/images/Icons/arrow-right-rounded.svg"}

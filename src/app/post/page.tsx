@@ -2,7 +2,7 @@
 
 import BotonBorrar from "@/components/botonBorrar";
 import PostForm from "@/components/postForm";
-import { notifyInfo } from "@/utils/toast";
+import { notifyError, notifyInfo } from "@/utils/toast";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -16,24 +16,17 @@ const Posts = () => {
     fetchDatos();
   }, []);
 
-  const peticionGet = async () => {
-    // Verificar si hay datos en localStorage
-    const localData = localStorage.getItem("/api/blog");
   
-    if (localData) {
-      // Si hay datos en localStorage, usarlos en lugar de hacer la petición
-      const parsedData = JSON.parse(localData);
-      setData(parsedData.reverse());
-    } else {
-      // Si no hay datos en localStorage, hacer la petición HTTP
+
+  const peticionGet = async () => {
+    try {
       const response = await axios.get("/api/blog");
       const responseData = response?.data;
-  
-      // Guardar los datos en localStorage
-      localStorage.setItem("/api/blog", JSON.stringify(responseData));
-  
-      // Actualizar el estado con los datos obtenidos
       setData(responseData.reverse());
+      
+    } catch (error) {
+      notifyError("Error al realizar la petición");
+      
     }
   };
   
