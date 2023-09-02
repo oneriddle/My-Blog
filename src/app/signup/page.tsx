@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { notifySuccess, notifyWarn } from "../../utils/toast";
+import { notifyError, notifySuccess, notifyWarn } from "../../utils/toast";
 import Link from "next/link";
 
 const SignUpForm = ({ onLogin }: any) => {
@@ -17,8 +17,9 @@ const SignUpForm = ({ onLogin }: any) => {
   };
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
+ 
       const formData = new FormData(e.currentTarget);
 
       const signupResponse = await axios.post("/api/auth/signup", {
@@ -42,7 +43,7 @@ const SignUpForm = ({ onLogin }: any) => {
       }
     } catch (error) {
       if (error instanceof AxiosError) {
-        notifyWarn(error.response?.data.message);
+        notifyError("No hay conexión")
       }
     }
   };

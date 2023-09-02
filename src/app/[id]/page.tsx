@@ -35,14 +35,7 @@ const PostDetail = ({ params }: any) => {
       console.error("Error al realizar la petición:", error);
     }
   };
-  
 
-  const loaded = (img: any) => {
-    const previewImage = document.getElementById("loader");
-    previewImage?.classList.add("display-none");
-    img.classList.remove("display-none");
-    img.classList.remove("opacity-0");
-  };
 
   useEffect(() => {
     const fetchDatos = async () => {

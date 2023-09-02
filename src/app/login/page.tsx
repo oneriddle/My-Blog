@@ -16,11 +16,12 @@ const LoginPage = () => {
   };
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-
+    e.preventDefault();
     if(!navigator.onLine ){
-      notifyError("No hay conexón")
+      
+      notifyError("No hay conexión")
     }else{
-      e.preventDefault();
+     
       notifyInfo("Cargando... ⏳");
     const body = new FormData(e.currentTarget);
 

@@ -1,4 +1,4 @@
-import { notifySuccess, notifyWarn } from "@/utils/toast";
+import { notifyError, notifySuccess, notifyWarn } from "@/utils/toast";
 import axios, { AxiosError } from "axios";
 import moment from "moment";
 import Image from "next/image";
@@ -13,8 +13,12 @@ const PostForm = ({ peticionGet }: any) => {
   const date = moment().add(3, "days").calendar();
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     try {
-      e.preventDefault();
+
+      if(!navigator.onLine ){
+        notifyError("No hay conexión")
+      }
 
       if (!file) return;
 
