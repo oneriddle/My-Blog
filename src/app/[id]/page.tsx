@@ -26,17 +26,12 @@ const PostDetail = ({ params }: any) => {
     img.classList.remove("opacity-0");
   };
 
-  useEffect(
-    () => {
-      const fetchDatos = async () => {
-        await peticionGet();
-      };
-      fetchDatos();
-    },
-    [
-      /* peticionGet() */
-    ]
-  );
+  useEffect(() => {
+    const fetchDatos = async () => {
+      await peticionGet();
+    };
+    fetchDatos();
+  }, []);
 
   return (
     <>

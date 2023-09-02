@@ -4,7 +4,6 @@ import BotonBorrar from "@/components/botonBorrar";
 import PostForm from "@/components/postForm";
 import { notifyInfo } from "@/utils/toast";
 import axios from "axios";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Posts = () => {

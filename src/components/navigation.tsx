@@ -4,13 +4,11 @@ import { notifyInfo } from "@/utils/toast";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const pathname = usePathname();
   const session = useSession();
-  const router = useRouter();
 
   const toggleNavbar = () => {
     if (window.innerWidth < 990) {

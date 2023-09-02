@@ -1,10 +1,10 @@
 "use client";
 
-import React, { FormEvent, useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
-import Select from "react-select";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import Select from "react-select";
 
 const Blog = () => {
   const [data, setData] = useState([]);

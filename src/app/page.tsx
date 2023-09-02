@@ -1,5 +1,4 @@
 import Blog from "@/components/blog";
-import Link from "next/link";
 
 const IndexPage = async () => {
   return (

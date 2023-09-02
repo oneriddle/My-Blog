@@ -23,7 +23,7 @@ export const POST = async (request: Request) => {
     if (!contenido || contenido.lenght < 10)
       return NextResponse.json(
         {
-          message: "⚠️ Contenido must be at least 10 characters",
+          message: "⚠️ Contenido debe tener al menos 10 caracteres",
         },
 
         {
@@ -80,8 +80,4 @@ export const POST = async (request: Request) => {
     }
   }
   return NextResponse.json({ message: "post guardado!" });
-};
-
-export const DELETE = async (request: Request) => {
-  NextResponse.json({ message: "Delete no está desarrollada" });
 };

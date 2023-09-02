@@ -1,9 +1,8 @@
-import axios, { AxiosError } from "axios";
-import { FormEvent, useState } from "react";
 import { notifySuccess, notifyWarn } from "@/utils/toast";
+import axios, { AxiosError } from "axios";
 import moment from "moment";
-import Posts from "@/app/post/page";
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 
 const PostForm = ({ peticionGet }: any) => {
   const [file, setFile] = useState<File>();

@@ -1,17 +1,16 @@
 "use client";
 
-import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import Navigation from "@/components/navigation";
 import Providers from "@/components/providers";
 import "@/styles/css/styles.css";
 import "animate.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import Script from "next/script";
 
+import Info from "@/components/info";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-import Info from "@/components/info";
 
 import { Analytics } from "@vercel/analytics/react";
 export default function RootLayout({
