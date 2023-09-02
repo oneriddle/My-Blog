@@ -74,7 +74,7 @@ Dentro de la app puedes:
 3. Iniciar Sesión y Registrarte.
 4. Agregar y borrar Posts.
 5. Cerrar Sesión.
-6. Ver el Blog en modo offline si los previamente ya se habían descargado los datos.
+6. Ver el Blog en modo offline si previamente ya se habían descargado los datos.
 
 ```
 
