@@ -1,23 +1,33 @@
 "use client";
 
-import { notifySuccess } from "@/utils/toast";
+import { notifyError, notifySuccess } from "@/utils/toast";
 import Image from "next/image";
 
 const BotonBorrar = ({ id, peticionGet }: any) => {
   const borrarPost = async () => {
-    const confirmado = confirm(
-      "¿ Estás seguro ? esta operación no se puede deshacer"
-    );
 
-    if (confirmado) {
-      const res = await fetch(`/api/blog/${id}`, {
-        method: "DELETE",
-      });
-
-      if (res.ok) {
-        peticionGet();
-        notifySuccess("Post Eliminado!");
+    try {
+      const confirmado = confirm(
+        "¿ Estás seguro ? esta operación no se puede deshacer"
+      );
+  
+      if (confirmado) {
+        const res = await fetch(`/api/blog/${id}`, {
+          method: "DELETE",
+        });
+  
+        if (res.ok) {
+          peticionGet();
+          notifySuccess("Post Eliminado!");
+        }
+        if (!res.ok) {
+          notifyError("No hay conexión")
+        }
       }
+      
+    } catch (error) {
+      notifyError("No hay conexión")
+      
     }
   };
 

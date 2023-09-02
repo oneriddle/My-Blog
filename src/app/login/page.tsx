@@ -1,6 +1,6 @@
 "use client";
 
-import { notifyInfo, notifySuccess, notifyWarn } from "@/utils/toast";
+import { notifyError, notifyInfo, notifySuccess, notifyWarn } from "@/utils/toast";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +16,12 @@ const LoginPage = () => {
   };
 
   const handdleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    notifyInfo("Cargando... ⏳");
-    e.preventDefault();
+
+    if(!navigator.onLine ){
+      notifyError("No hay conexón")
+    }else{
+      e.preventDefault();
+      notifyInfo("Cargando... ⏳");
     const body = new FormData(e.currentTarget);
 
     const res = await signIn("credentials", {
@@ -27,12 +31,19 @@ const LoginPage = () => {
       redirect: false,
     });
 
+   
+    
+
     if (res?.error) return notifyWarn(res.error as string);
 
     if (res?.ok) {
       notifySuccess("Bienvenido");
       return router.push("/post");
     }
+    if (!res?.ok) {
+      notifyError('Error de conexión')
+    }
+  }
   };
 
   return (

@@ -10,14 +10,32 @@ const PostDetail = ({ params }: any) => {
   const { id } = params;
   const [data, setData] = useState<any>([]);
 
+
   const peticionGet = async () => {
     try {
-      const data = await axios.get(`/api/blog/${id}`);
-      setData(data.data.OneFound);
+      if (navigator.onLine) {
+        const response = await axios.get(`/api/blog/${id}`);
+        const serverData = response?.data?.OneFound;
+
+        setData(serverData);
+        localStorage.setItem(`/api/blog/${id}`, JSON.stringify(serverData));
+      } else {
+        console.log('navegador online', navigator.onLine);
+  
+        const localStorageData = localStorage.getItem(`/api/blog/${id}`);
+  
+        if (localStorageData) {
+
+          setData(JSON.parse(localStorageData));
+        } else {
+          notifyError("No hay conexión ni datos almacenados.");
+        }
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error al realizar la petición:", error);
     }
   };
+  
 
   const loaded = (img: any) => {
     const previewImage = document.getElementById("loader");
@@ -40,15 +58,15 @@ const PostDetail = ({ params }: any) => {
           <div className="post-detail animate__animated animate__fadeIn">
             {data?.length == 0 ? (
               <div className="cargando-container">
-                <p>Cargando...</p>
-                <Image
+                <p>{!navigator.onLine ? "No hay conexión ni datos offline" : "Cargando..."}</p>
+                {!navigator.onLine ? "😔" : <Image
                   src="/images/svg-loaders/three-dots.svg"
                   width={100}
                   height={100}
                   style={{ fill: "red" }}
                   alt="loader"
-                />
-                <p>Desde mongoDB</p>
+                />}
+                
               </div>
             ) : (
               <>

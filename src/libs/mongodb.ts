@@ -1,3 +1,4 @@
+import { notifyError } from "@/utils/toast";
 import mongoose from "mongoose";
 
 const { MONGODB_URI } = process.env;
@@ -14,6 +15,7 @@ export const connectDB = async () => {
     }
   } catch (error) {
     console.log("🟥 tryCatch error:", error);
+    notifyError('Error de conexión')
     return Promise.reject(false);
   }
 };

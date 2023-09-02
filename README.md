@@ -67,11 +67,12 @@ Puedes registarte en el enlace a Registrarme
 ```
 Dentro de la app puedes:
 
-1.- Ver el Blog y los detalles de sus Posts.
-2.- Buscar un post dentro del Blog.
-3.- Iniciar Sesion y Registrarte.
-4.- Agregar post al Blog.
-5.- Cerrar sesion.
+1. Ver el Blog y los detalles de sus Posts.
+2. Buscar un post dentro del Blog (Por título, autor, fecha o contenido).
+3. Iniciar Sesión y Registrarte.
+4. Agregar y borrar Posts.
+5. Cerrar Sesión.
+6. Ver el Blog en modo offline si los previamente ya se habían descargado los datos.
 
 ```
 

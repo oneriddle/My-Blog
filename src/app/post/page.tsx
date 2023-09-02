@@ -17,9 +17,26 @@ const Posts = () => {
   }, []);
 
   const peticionGet = async () => {
-    const data = await axios.get("/api/blog");
-    setData(data.data.reverse());
+    // Verificar si hay datos en localStorage
+    const localData = localStorage.getItem("/api/blog");
+  
+    if (localData) {
+      // Si hay datos en localStorage, usarlos en lugar de hacer la petición
+      const parsedData = JSON.parse(localData);
+      setData(parsedData.reverse());
+    } else {
+      // Si no hay datos en localStorage, hacer la petición HTTP
+      const response = await axios.get("/api/blog");
+      const responseData = response?.data;
+  
+      // Guardar los datos en localStorage
+      localStorage.setItem("/api/blog", JSON.stringify(responseData));
+  
+      // Actualizar el estado con los datos obtenidos
+      setData(responseData.reverse());
+    }
   };
+  
 
   const peticionPut = (index: any, e: any) => {
     notifyInfo(`Disponible en la proxima versión...`);
