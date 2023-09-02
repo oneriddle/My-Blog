@@ -49,11 +49,11 @@ npm i && npm run dev
 ```
 
 ```
-Ingresa a http://localhost:3000
+Ingresar a http://localhost:3000
 ```
 
 ```
-Esta app requiere loggear para poder usarla
+Esta aplicación requiere iniciar sesión para poder utilizar el administrador.
 ```
 
 ```
@@ -63,7 +63,7 @@ Password: asdasd
 ```
 
 ```
-Puedes registarte en el enlace a Registrarme
+Puedes registarte en el enlace a registro
 ```
 
 ```
