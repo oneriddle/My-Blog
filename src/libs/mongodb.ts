@@ -14,8 +14,8 @@ export const connectDB = async () => {
       return Promise.resolve(true);
     }
   } catch (error) {
-    console.log("🟥 tryCatch error:", error);
-    notifyError('Error de conexión')
-    return Promise.reject(false);
+    console.error("error", error);
+    Promise.reject(false);
+    return notifyError('Error de conexión')
   }
 };

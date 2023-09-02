@@ -1,4 +1,5 @@
-/* Base */ /** Reset **/
+/* Base */
+/** Reset **/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap");
 *,
 *::before,
@@ -275,6 +276,7 @@ h2 {
 }
 .blog-container .post-card .card-header h4 {
   margin-top: 10px;
+  text-align: center;
 }
 .blog-container .post-card .card-header p {
   text-align: center;

@@ -25,7 +25,7 @@ const Posts = () => {
       setData(responseData.reverse());
       
     } catch (error) {
-      notifyError("Error al realizar la petición");
+      notifyError("No hay conexión");
       
     }
   };

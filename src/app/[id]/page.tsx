@@ -25,7 +25,7 @@ const PostDetail = ({ params }: any) => {
           setData(JSON.parse(localStorageData));
         } else {
           setOnline(false);
-          notifyError("No hay conexión ni datos almacenados.");
+          notifyError("No hay conexión ni datos almacenados localmente.");
         }
       }
     } catch (error) {

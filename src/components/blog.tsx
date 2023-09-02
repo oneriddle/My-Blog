@@ -18,25 +18,19 @@ const Blog = () => {
     try {
       if (navigator.onLine) {
  
-        // Si hay conexión, realizar la petición Axios
         const response = await axios.get("/api/blog");
         const Posts = response?.data;
   
-        // Actualizar el estado con los datos obtenidos
         setData(Posts.reverse());
   
-        // Guardar los datos en localStorage para futuras cargas
         localStorage.setItem("blogData", JSON.stringify(Posts));
       } else {
         
-        // No hay conexión, verificar si hay datos en localStorage
         const localStorageData = localStorage.getItem("blogData");
   
         if (localStorageData) {
-          // Si hay datos en localStorage, cargarlos en el estado
           setData(JSON.parse(localStorageData));
         } else {
-          // No hay conexión ni datos en localStorage
           notifyError("No hay conexión ni datos almacenados localmente.");
           setOnline(false);
         }
@@ -120,11 +114,9 @@ const Blog = () => {
               (
                 <>
                 <p>😔</p>
-                <p>No hay conexión ni datos offline</p>
+                <p>No hay conexión ni datos almacenados localmente.</p>
                 </>
               )
-
-              
             }
         </div>
         ) : data?.filter((val: any) => {
