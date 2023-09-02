@@ -65,7 +65,7 @@ const PostDetail = ({ params }: any) => {
               (
                 <>
                 <p>😔</p>
-                <p>No hay conexión ni datos offline</p>
+                <p>No hay conexión ni datos almacenados localmente.</p>
                 </>
               )
             }
