@@ -1,5 +1,4 @@
-/* Base */
-/** Reset **/
+/* Base */ /** Reset **/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap");
 *,
 *::before,
@@ -292,18 +291,9 @@ h2 {
   padding: 20px 60px;
 }
 .blog-container .post-card .fecha {
-  position: relative;
   color: rgb(85, 85, 85);
-  bottom: -5px;
-  left: 60px;
   font-size: 12px;
-  z-index: 10;
   font-style: italic;
-}
-@media (min-width: 768px) {
-  .blog-container .post-card .fecha {
-    left: 150px;
-  }
 }
 
 .cargando-container {
@@ -928,18 +918,9 @@ nav a:hover {
   }
 }
 .post-detail .fecha {
-  position: relative;
   color: rgb(85, 85, 85);
-  bottom: -5px;
-  left: 70px;
   font-size: 12px;
-  z-index: 10;
   font-style: italic;
-}
-@media (min-width: 768px) {
-  .post-detail .fecha {
-    left: 200px;
-  }
 }
 .post-detail .go-back {
   top: 1px;
